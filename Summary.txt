@@ -1,0 +1,66 @@
+Comandos GIT - Resumen
+
+-----------------------------------------
+git init
+	Este comando se utiliza en el directorio del proyecto y crea el subdirectorio .git, que contendrá el 'esqueleto' del repositorio. En este momento .git estará vacio.
+-----------------------------------------
+git add <files>
+	Con este comando añadirás los ficheros de los cuales quieras llevar un seguimiento sobre sus versiones al repositorio. 
+-----------------------------------------
+git clone <url> [name_local_directory]
+	Copia el repositorio del servidor (con todas sus versiones) al directorio local.
+-----------------------------------------
+git status
+	Muestra el estado de las versiones de los ficheros.
+-----------------------------------------
+git diff
+	Muestra los últimos cambios en los ficheros controlados.
+-----------------------------------------
+git commit <option>
+	Guarda los ultimos cambios al repositorio local.
+-----------------------------------------
+git log <option>
+	Muestra los ultimos commits realizados por orden cronológico inverso.
+-----------------------------------------
+git reset HEAD <file>
+	Quita del repositorio local el fichero.
+-----------------------------------------
+git checkout <branch>
+	Cambia a la rama especificada.
+
+git checkout -- <file>
+	Descarta todos los cambios hechos en el fichero.
+
+git checkout -b <branch> [remote_name]/[branch]
+	Crea y cambia a la rama especificada [copiando la rama remota].
+-----------------------------------------
+git branch <branch>
+	Crea la rama especificada.
+
+git branch -d <branch>
+	Borra la rama especificada.
+
+git branch -v
+	Muestra una lista de las ramas con su último commit.
+
+git branch --merged/--no-merged
+	Muestra la lista de las ramas que ya han sido/aún no han sido unidas
+-----------------------------------------
+git tag <version_name>
+	Crea una etiqueta de versión.
+-----------------------------------------
+git merge <branch>
+	Une el branch con la rama en la que estás actualmente.
+-----------------------------------------
+git mergetool
+	Herramienta gráfica para resolver conflictos del merge.
+-----------------------------------------
+git fetch <server>
+	Actualiza la posición master del servidor especificado en tu git local.
+-----------------------------------------
+git push <remote> <branch>
+	Sube tu último commit al servidor especificado en remote.
+
+git push <remote> :<branch>
+	Borra la rama en el servidor remote.
+
