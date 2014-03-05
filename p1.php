@@ -9,7 +9,7 @@
     $day = $_REQUEST["day"];
     $month = $_REQUEST["month"];
     $year = $_REQUEST["year"];
-    $gender = $_REQUEST["gender"];
+    $sex = $_REQUEST["sex"];
     
     $action = $_REQUEST["cbaction"];
     $comedy = $_REQUEST["cbcomedy"];
@@ -40,6 +40,14 @@
             <div class="alignright"><?php echo $username ?></div>
         </div>
         <div class="tableline">
+            <div class="alignleft">Name:</div>
+            <div class="alignright"><?php echo $name ?></div>
+            </div>
+        <div class="tableline">
+            <div class="alignleft">Surname:</div>
+            <div class="alignright"><?php echo $surname ?></div>
+        </div>
+        <div class="tableline">
             <div class="alignleft">Password:</div>
             <div class="alignright"><?php echo $password ?></div>  
         </div>
@@ -48,28 +56,16 @@
             <div class="alignright"><?php echo $email ?></div>
         </div>
         <div class="tableline">
-            <div class="alignleft">Name:</div>
-            <div class="alignright"><?php echo $name ?></div>
-            </div>
-        <div class="tableline">
-            <div class="alignleft">Lastname:</div>
-            <div class="alignright"><?php echo $lastname ?></div>
+            <div class="alignleft">Birthday:</div>
+            <div class="alignright"><?php echo $day ?> <?php echo $month ?> <?php echo $year ?></div>
         </div>
         <div class="tableline">
-            <div class="alignleft">Birthdate:</div>
-            <div class="alignright"><?php echo $birthday ?> <?php echo $birthmonth ?> <?php echo $birthyear ?></div>
-        </div>
-        <div class="tableline">
-            <div class="alignleft">Gender:</div>
-            <div class="alignright"><?php echo $gender ?></div>
+            <div class="alignleft">Sex:</div>
+            <div class="alignright"><?php echo $sex ?></div>
         </div>
         <div class="tableline">
             <div class="alignleft">Categories subscribed:</div>
             <div class="alignright"><?php echo $channels ?></div>
-        </div>
-        <div class="tableline">
-            <div class="alignleft">Terms acepted:</div>
-            <div class="alignright"><?php echo $terms ?></div>
         </div>
         <div class="tableline">
             <div class="alignleft">Browser:</div>

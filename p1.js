@@ -14,20 +14,27 @@ function validar() {
 	passw =  /^(?=.*[0-9])(?=.*[!@#$%^&_*])[a-zA-Z0-9!@#$%^&_*]{7,15}$/;
 	
 	if(Username.value.length == 0) {
-		alert("Please, introduce a valid username!");
+		//alert("Please, introduce a valid username!");
 	} else {
 
 	}
-	if(Password.value.match(passw) || Password.value.length == 0) {
-		//alert("Password correct");
-	} else {
+	if(!(Password.value.match(passw) || Password.value.length == 0)) {
 		alert("Password incorrect");
+		return false;
+	} else {
+		//alert("Password incorrect");
 	}
 	if(Password2.value != Password.value) {
 		alert("Password doesn\'t match");
+		return false;
 	}
-	if(Email.value) {
-		
+	if(!(Email.value == null || Email.value == "")) {
+		atpos = Email.value.indexOf("@");
+		dotpos = Email.value.lastIndexOf(".");
+		if (atpos < 1 || dotpos < atpos+2 || dotpos+2 >= Email.length){
+  			alert("Not a valid e-mail address");
+  			return false;
+  		}
 	} else {
 		
 	}
@@ -56,7 +63,7 @@ function ChangeMethod(){
 	get = document.getElementById("get");
 	if(get.checked) form.method="get";
 	else form.method="post";
-	alert(form.method);
+	//alert(form.method);
 }
 
 function ChangeEncType(){
@@ -64,15 +71,15 @@ function ChangeEncType(){
 	multipart = document.getElementById("multipart");
     if(multipart.checked) form.enctype="multipart/form-data";
     else form.enctype="application/x-www-form-urlencoded";
-    alert(form.enctype);
+    //alert(form.enctype);
 }
 
 function ChangeAction(){
 	form = document.getElementById("myForm");
-	alert(form.action);
-	document.getElementById("formulario").action="http://clave.det.uvigo.es:8080/~lroprof/p1.php";
-	if(form.action=="p1.php") ;
+	student = document.getElementById("student");
+	if(!student.checked) document.getElementById("myForm").action = "http://clave.det.uvigo.es:8080/~lroprof/p1.php";
     else form.action="p1.php";
+	alert(form.action);
 }
 
 function get_browser(){
@@ -88,14 +95,6 @@ function get_browser(){
 	 	Version=trim_version(Version);
 	 	return Name + " " + Version;
 	}
-	//MSIE
-	Offset=Agent.indexOf("MSIE");
-	if (Offset!=-1) {
-	 	Name = "Microsoft Internet Explorer";
-	 	Version = Agent.substring(Offset+5);
-	 	Version=trim_version(Version);
-	 	return Name + " " + Version;
-	}
 	//Chrome
 	Offset=Agent.indexOf("Chrome");
 	if (Offset!=-1) {
@@ -103,16 +102,6 @@ function get_browser(){
 	 	Version = Agent.substring(Offset+7);
 	 	Version=trim_version(Version);
 	 	return Name + " " + Version;
-	}
-	//Safari
-	Offset=Agent.indexOf("Safari");
-	if (Offset!=-1) {
-	 	Name = "Safari";
-	 	Offset2=Agent.indexOf("Version");
-	 	if (Offset2!=-1) Version = Agent.substring(Offset+8);
-	  	else Version = Agent.substring(Offset+7);
-	  	Version=trim_version(Version);
-	  	return Name + " " + Version;
 	}
 	//Firefox
 	Offset=Agent.indexOf("Firefox");
