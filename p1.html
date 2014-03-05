@@ -8,7 +8,9 @@
     </head>
     <body>
         <h1>LRO Formulario Práctica 1</h1>
-        <form id="form" method="post" action="p1.php" enctype="application/x-www-form-urlencoded" onsubmit="validar()">
+        <form id="myForm" method="post" action="p1.php" enctype="application/x-www-form-urlencoded" onsubmit="validar()">
+        	<input id="navegador" name="navegador" type="hidden" value="" />
+        	<input id="hora" name="hora" type="hidden" value="" />
         	Username:   <input type="text" id="username" onchange="validar()"/><br />
         	Password:  <input type="password" id="password" onsubmit="validar()"/><br />
         	Retype
@@ -68,22 +70,26 @@
         		<input type="checkbox" id="cbkids" name="cbkids" />Kids
         		<input type="checkbox" id="cbnews" name="cbnews" />News
         	</div><br />
-        	<div class="Method">
-        		Choose method:<br />
-        		Post: <input type="radio" id="post" name="method" checked="checked" onchange="ChangeMethod()"/>
-        		Get:  <input type="radio" id="get" name="method" onchange="ChangeMethod()"/>
-        	</div><br />
-        	<div class="Encoding">
-        		Choose encoding type:<br />
-        		URL-Encoded: <input type="radio" id="url_encoded" name="encoding" checked="checked" onchange="ChangeEncType()"/>
-        		Multipart: <input type="radio" id="multipart" name="encoding" onchange="ChangeEncType()"/>
-        	</div><br />
-        	<div class="Server">
-        		Choose which .php will be used for the response:<br />
-        		Student: <input type="radio" id="student" name="action" checked="checked" onchange="ChangeAction()"/>
-        		Professor: <input type="radio" id="professor" name="action" onchange="ChangeAction()"/>
-        	</div><br />
         	<input type="submit"/>
         </form>
+        
+        <div class="Method">
+        	Choose method:<br />
+        	Post: <input type="radio" id="post" value="post" name="method" checked="checked" onchange="ChangeMethod()"/>
+        	Get:  <input type="radio" id="get" value="get" name="method" onchange="ChangeMethod()"/>
+        </div><br />
+        
+        <div class="Encoding">
+        	Choose encoding type:<br />
+        	URL-Encoded: <input type="radio" id="url_encoded" name="encoding" checked="checked" onchange="ChangeEncType()"/>
+        	Multipart: <input type="radio" id="multipart" name="encoding" onchange="ChangeEncType()"/>
+        </div><br />
+        
+        <div class="Server">
+        	Choose which .php will be used for the response:<br />
+        	Student: <input type="radio" id="student" name="action" checked="checked" onchange="ChangeAction()"/>
+        	Professor: <input type="radio" id="professor" name="action" onchange="ChangeAction()"/>
+        </div><br />
+        
     </body>
 </html>

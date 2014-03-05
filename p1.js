@@ -52,19 +52,23 @@ function validar() {
 }
 
 function ChangeMethod(){
-	form = document.getElementById("form");
-	if(form.method=="post") form.method="get";
+	var form = document.getElementById("myForm");
+	get = document.getElementById("get");
+	if(get.checked) form.method="get";
 	else form.method="post";
+	alert(form.method);
 }
 
 function ChangeEncType(){
-	form = document.getElementById("form");
-    if(form.enctype=="application/x-www-form-urlencoded") form.enctype="multipart/form-data";
+	form = document.getElementById("myForm");
+	multipart = document.getElementById("multipart");
+    if(multipart.checked) form.enctype="multipart/form-data";
     else form.enctype="application/x-www-form-urlencoded";
+    alert(form.enctype);
 }
 
 function ChangeAction(){
-	form=document.getElementById("form");
+	form = document.getElementById("myForm");
 	alert(form.action);
 	document.getElementById("formulario").action="http://clave.det.uvigo.es:8080/~lroprof/p1.php";
 	if(form.action=="p1.php") ;
