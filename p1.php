@@ -15,9 +15,9 @@
     $comedy = $_REQUEST["cbcomedy"];
     $doc = $_REQUEST["cbdoc"];
     $quiz = $_REQUEST["cbquiz"];
-    $cbsports = $_REQUEST["cbsports"];
-    $cbnews = $_REQUEST["cbnews"];
-    $cbkids = $_REQUEST["cbkids"];
+    $sports = $_REQUEST["cbsports"];
+    $news = $_REQUEST["cbnews"];
+    $kids = $_REQUEST["cbkids"];
     
     $server = $_SERVER["HTTP_HOST"];
     $referer = $_SERVER["HTTP_REFERER"];
@@ -65,7 +65,16 @@
         </div>
         <div class="tableline">
             <div class="alignleft">Categories subscribed:</div>
-            <div class="alignright"><?php echo $channels ?></div>
+            <div class="alignright">
+            <?php
+            if(action==on) echo "action";
+            if(comedy==on) echo "comedy";
+            if(doc==on) echo "documentaries";
+            if(quiz==on) echo "quiz";
+            if(kids==on) echo "kids";
+            if(news==on) echo "news";
+            if(sports==on) echo "sports"; ?>
+            </div>
         </div>
         <div class="tableline">
             <div class="alignleft">Browser:</div>
